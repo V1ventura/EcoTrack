@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&amp;display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="servico.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Ecotrack</title>
+</head>
+<body>
+    <div class="hero">
+        <h1>Serviços</h1>
+    </div>
+
+    <div class="container">
+        <nav>
+            <a href="index.html">
+                <img src="Imagem/ECOTRACK.png" alt="logo">
+            </a>
+            <div class="url">
+                <a href="index.html">Home</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="Servicos.html">Serviços</a>
+                <a href="Conscientizacao.html">Conscientização</a>
+                <a class="btn" href="login.html">Login/Cadastrar</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container">
+        <div class="interactive-map" id="oceanMap">
+            <div class="service-buttons">
+                <button class="service-button" data-service="sensors">
+                    <i class="fas fa-tint"></i> Sensores Aquáticos
+                </button>
+                <button class="service-button" data-service="buoys">
+                    <i class="fas fa-water"></i> Boias Inteligentes
+                </button>
+                <button class="service-button" data-service="drones">
+                    <i class="fas fa-robot"></i> Drones Aquáticos
+                </button>
+                <button class="service-button" data-service="ai">
+                    <i class="fas fa-brain"></i> IA Preditiva
+                </button>
+                <button class="service-button" data-service="future">
+                    <i class="fas fa-rocket"></i> Tecnologias Futuras
+                </button>
+            </div>
+            <div id="serviceInfo" class="service-info" style="opacity: 1; animation: 0.5s ease 0s 1 normal forwards running fadeIn;">
+                <h2 id="serviceTitle">Sensores Aquáticos Avançados</h2>
+                <p id="serviceDescription">Nossos sensores aquáticos de última geração medem constantemente parâmetros cruciais como temperatura, salinidade, pH e níveis de oxigênio dissolvido.</p>
+            </div>
+        </div>
+
+        <div class="data-display">
+            <div id="locationInfo" style="text-align: center; margin-bottom: 15px; font-size: 1.2em;">
+                <div class="select-wrapper">
+                    <select id="citySelect">
+                        <option value="salvador">Salvador</option>
+                        <option value="rio">Rio de Janeiro</option>
+                        <option value="santos">Santos</option>
+                    </select>
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <span id="seaName">Baía de Todos os Santos</span>
+            </div>
+            <canvas id="dataChart" width="708" height="354" style="display: block; box-sizing: border-box; height: 354px; width: 708px;"></canvas>
+            <div class="sensor-data">
+                <div class="sensor-item">
+                    <h3>Temperatura</h3>
+                    <div class="sensor-value" id="tempValue">25.5°C</div>
+                </div>
+                <div class="sensor-item">
+                    <h3>Salinidade</h3>
+                    <div class="sensor-value" id="salinityValue">35.2 ppt</div>
+                </div>
+                <div class="sensor-item">
+                    <h3>pH</h3>
+                    <div class="sensor-value" id="phValue">8.14</div>
+                </div>
+                <div class="sensor-item">
+                    <h3>Oxigênio Dissolvido</h3>
+                    <div class="sensor-value" id="oxygenValue">5.7 mg/L</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-text" id="infoText">
+            <h2>Bem-vindo a EcoTrack</h2>
+            <p>Nossa tecnologia de ponta combina sensores aquáticos avançados, boias inteligentes, drones aquáticos autônomos e inteligência artificial para fornecer um monitoramento marinho abrangente e em tempo real. Selecione um serviço acima para explorar mais.</p>
+        </div>
+
+        <div class="detailed-info" id="detailedInfo">
+            <h2 id="detailedTitle">Sensores Aquáticos Avançados</h2>
+            <p id="detailedText">Nossa rede de sensores aquáticos avançados representa o estado da arte em monitoramento marinho...</p>
+        </div>
+
+        <div class="ai-insights" id="aiInsights">
+            <h3>Insights da IA</h3>
+            <p id="aiText">Previsão de ondas mais altas que o normal para o próximo fim de semana em Salvador. Alertando surfistas e banhistas.</p>
+        </div>
+    </div>
+
+    <div class="inf-text" id="infText">
+        <h2>Interaja com o globo!</h2>
+        <p>Ao manipular o globo, você poderá explorar os diversos tipos de oceanos e obter informações detalhadas sobre cada um deles, incluindo dados sobre os níveis de poluição.</p>
+    </div>
+
+    <div class="globe-container">
+        <canvas id="globeCanvas"></canvas>
+    </div>
+
+    <div id="info" class="globo-container">
+        <button class="close-button">×</button>
+        <div id="info-content">
+            <h2>Oceano Índico</h2>
+            <p><strong>Curiosidades:</strong> É o terceiro maior oceano e contém importantes rotas de comércio marítimo.</p>
+            <h3>Poluição</h3>
+            <p><strong>Nível:</strong> Alto</p>
+            <div class="pollution-meter">
+                <div class="pollution-level" style="width: 70%; background-color: rgb(178, 76, 0);">
+                    70%
+                </div>
+            </div>
+            <p>O Oceano Índico enfrenta desafios únicos devido à alta densidade populacional em suas costas e ao rápido desenvolvimento industrial em muitos países da região.</p>
+            <h3>Principais Lixos</h3>
+            <ul>
+                <li>Plásticos</li>
+                <li>Detritos industriais</li>
+                <li>Poluição por petróleo</li>
+                <li>Esgoto não tratado</li>
+                <li>Fertilizantes agrícolas</li>
+            </ul>
+            <p><strong>Detalhes:</strong> Estima-se que 5 países asiáticos (China, Indonésia, Filipinas, Vietnã e Sri Lanka) sejam responsáveis por mais da metade do plástico que entra nos oceanos.</p>
+            <h3>Impactos</h3>
+            <p>A poluição está ameaçando ecossistemas únicos, como os recifes de coral do Mar Vermelho e do Oceano Índico ocidental. A pesca excessiva combinada com a poluição está causando um declínio significativo nas populações de peixes.</p>
+            <h3>Iniciativas</h3>
+            <p>A Associação das Nações do Sudeste Asiático (ASEAN) adotou um acordo para reduzir a poluição marinha. Projetos de restauração de manguezais estão sendo implementados para ajudar a filtrar poluentes.</p>
+        </div>
+    </div>
+
+    <script src="servicos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script><canvas width="803" height="650" style="display: block; width: 803px; height: 650px;"></canvas></script>
+    <footer class="footer">
+        <div class="container">
+            <p>Desenvolvido por EcoTrack</p>
+        </div>
+    </footer>
+</body>
+</html>
