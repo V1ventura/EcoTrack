@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        
+        <div class="content first-content">
+            <button id="backButton" class="btn btn-primary" onclick="window.history.back()">
+                <img src="Imagem\replay_10024624.png" alt="Voltar" class="back-icon"> 
+            </button>
+            <div class="first-column">
+                <h2 class="title title-primary">Bem-vindo!</h2>
+                <p class="description description-primary">Para melhor aproveitamento do site</p>
+                <p class="description description-primary">acesse sua conta agora</p>
+                <button id="signin" class="btn btn-primary">Entrar</button>
+            </div>    
+            <div class="second-column">
+                <h2 class="title title-second">Crie sua conta</h2>
+                <p class="description description-second">Use seus dados para se cadastrar</p>
+                <form class="form" id="signupForm">
+                    <label class="label-input">
+                        <i class="fas fa-user icon-modify"></i>
+                        <input type="text" id="name" placeholder="Nome">
+                        <div class="error-message" id="nameError"></div>
+                    </label>
+                    <label class="label-input">
+                        <i class="fas fa-id-card icon-modify"></i>
+                        <input type="text" id="cpf" placeholder="CPF" maxlength="14" oninput="mascaraCPF(this)">
+                        <div class="error-message" id="cpfError"></div>
+                    </label>
+                    <label class="label-input">
+                        <i class="far fa-envelope icon-modify"></i>
+                        <input type="email" id="email" placeholder="Email">
+                        <div class="error-message" id="emailError"></div>
+                    </label>
+                    <label class="label-input">
+                        <i class="fas fa-lock icon-modify"></i>
+                        <input type="password" id="password" placeholder="Senha">
+                        <div class="error-message" id="passwordError"></div>
+                    </label>
+                    <label class="label-input">
+                        <i class="fas fa-lock icon-modify"></i>
+                        <input type="password" id="confirmPassword" placeholder="Confirme a Senha">
+                        <div class="error-message" id="confirmPasswordError"></div>
+                    </label>
+                    <button class="btn btn-second" id="submitSignup">Cadastrar</button>        
+                </form>
+            </div>
+        </div>
+        <div class="content second-content">
+            <div class="first-column">
+                <h2 class="title title-primary">Olá, seja bem-vindo!</h2>
+                <p class="description description-primary">Faça agora seu cadastro</p>
+                <p class="description description-primary">e aproveite ao máximo o nosso site!</p>
+                <button id="signup" class="btn btn-primary">Cadastre-se</button>
+            </div>
+            <div class="second-column">
+                <h2 class="title title-second">Faça seu login</h2>
+                <p class="description description-second">Faça login com seu e-mail e senha:</p>
+                <form class="form" id="signinForm">
+                    <label class="label-input">
+                        <i class="far fa-envelope icon-modify"></i>
+                        <input type="email" id="loginEmail" placeholder="Email">
+                        <div class="error-message" id="loginEmailError"></div>
+                    </label>
+                    <label class="label-input">
+                        <i class="fas fa-lock icon-modify"></i>
+                        <input type="password" id="loginPassword" placeholder="Senha">
+                        <div class="error-message" id="loginPasswordError"></div>
+                    </label>
+                    <p class="password">
+                        Esqueceu sua senha? <a href="recuperação.html">recupere sua conta</a>
+                    </p>
+                    
+                    <button class="btn btn-second" id="submitSignin">Entrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="Login.js"></script>
+</body>
+</html>
+
