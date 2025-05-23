@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="formulario.css">
+    <title>Ecotrack</title>
+</head>
+
+<body>
+  <header>
+    <h1>Monitoramento Marinho</h1>
+  </header>
+
+  <div class="container">
+    <nav>
+      <a href="index.html">
+        <img src="Imagem/ECOTRACK.png" alt="logo">
+      </a>
+      <div class="url">
+        <a href="index.html">Home</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="Servicos.html">Serviços</a>
+        <a href="Conscientizacao.html">Conscientização</a>
+        <a class="btn" href="login.html">Login/Cadastrar</a>
+      </div>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    </nav>
+  </div>
+
+  <main>
+    <h2>Entre em Contato</h2>
+    <form id="contactForm">
+      <label for="name">Nome:</label>
+      <input type="text" id="name" name="name" required>
+      
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" name="email" required>
+      
+      <label for="phone">Telefone:</label>
+      <input type="tel" id="phone" name="phone">
+      
+      <label for="subject">Assunto:</label>
+      <input type="text" id="subject" name="subject" required>
+      
+      <label for="message">Mensagem:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+      
+      <button type="submit">Enviar Mensagem</button>
+    </form>    
+    
+    <div class="logout">
+      <button id="logoutBtn">Sair da Conta</button>
+    </div>
+    
+  </main>
+
+  <div class="wave"></div>
+
+  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script src="formulario.js"></script>
+  
+  <footer class="footer">
+    <div class="container">
+        <p>Desenvolvido por EcoTrack</p>
+    </div>
+</footer>
+</body>
+</html>
+
+
+
+</body>
+</html>
+
+

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt=br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="conscientização.css">
+    <title>Conscientização | EcoTrack</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"> 
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+    
+    <style>
+         #map {
+            height: 500px;
+            width: 80%;
+            margin: 20px auto; 
+            border-radius: 15px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+        }
+
+
+        .filter-container {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: white;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
+
+        .filter-container label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .filter-container input {
+            margin-right: 10px;
+        }
+
+        .map-info {
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 18px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header class="background" style="background-image: url(EcoTrack/imgConsc/Ecossistema.jpg);">
+        <div class="container">
+            <nav class="navegation"> 
+                <a href="index.html">
+                <img src="EcoTrack/imgConsc/ECOTRACK.png" alt="Logo" class="LogoEco">
+                </a>
+                <div class="url">
+                    <a href="index.html">Home</a>
+                    <a href="sobre.html">Sobre</a>
+                    <a href="servicos.html">Serviços</a>
+                    <a href="Conscientização.html">Conscientização</a>
+                    <a class="btn" href="login.html">Login/Cadastrar</a>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+            <section class="banner">
+                <div class="banner-text">
+                    <h1>Conscientização</h1>
+                    <p>
+                        Trabalhando diariamente para superar os desafios e adversidades atuais que ameaçam a vida marítima, evoluímos juntamente com a tecnologia para agregar e proporcionar uma vida mais sustentável ao planeta Terra.
+                    </p>
+                </div>
+            </section>  
+        </div> 
+    </header>
+    
+
+    <section class="sobre">
+        <div class="container">
+            <div class="sobre-text">
+                <h3>Por um meio ambiente mais sustentavel</h3>
+                <p> 
+                    Os oceanos são um dos pilares fundamentais para a manutenção da vida na Terra e desempenham um papel crucial na regulação do clima global. Ocupando cerca de 70% de nosso planeta, e muitas vezes esquecidos por nós, os oceanos têm fundamental importância quanto à manutenção da vida na Terra. Propiciando aproximadamente R$20,9 milhões em bens e serviços ao ano, contribuem quanto à estabilidade do clima, regulam a umidade, e abrigam os principais responsáveis pela produção de oxigênio: as algas. Diante disso, é perceptível o quanto deveriam ser respeitados.
+                    
+                </p>
+            </div>
+            <div class="sobre-img">
+                <img src="EcoTrack\imgConsc\TartaguraFudida.webp" alt="sobre">
+            </div>
+    </section>
+
+    <section class="paragrafo1">
+        <div class="p1">
+            <p>
+                Os oceanos produzem pelo menos 50% do oxigênio do planeta, abrigam a maior parte da biodiversidade da Terra e fornecem a principal fonte de proteína para mais de um bilhão de pessoas. Eles também sustentam a economia global. Os serviços ecossistêmicos marinhos fornecem mais de 60% do valor econômico da biosfera global e 590 milhões de pessoas dependem da pesca marinha e da aquicultura para seu sustento. 
+                Mas, a poluição plástica está representando uma ameaça existencial para os ecossistemas marinhos.
+                <br><br>
+                "Todos os anos, cerca de 11 milhões de toneladas métricas de resíduos plásticos entram no oceano - sem ação imediata e sustentada, até 2040 essa quantidade quase triplicará, podendo chegar a 29 milhões de toneladas métricas por ano. Isto é o mesmo que despejar 50 quilos de plástico em cada metro de costa ao redor do mundo."
+                <br>
+                <br>
+                Grande parte do plástico tem origem em terra e entra nos oceanos através de rios e sistemas de esgoto. O impacto na saúde humana e animal tem sido preocupante - até 90% das aves marinhas estão sendo encontradas com plástico em seu sistema digestivo, e microplásticos foram encontrados nas placentas de mulheres grávidas.
+                "O lixo marinho, especialmente o plástico, pode ser a maior ameaça aos nossos oceanos", disse Lefteris Arapakis, fundador de uma escola de pesca sustentável na Grécia, e Jovem Campeão da Terra do PNUMA para 2020.
+                "Ao se fragmentarem em microplásticos, eles entram na cadeia alimentar enquanto matam a vida marinha". O plástico marinho está causando danos irreparáveis às economias, especialmente nos setores do turismo e da pesca", completou Lefteris.
+            </p>
+        </div>
+    </section>
+
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="EcoTrack\imgConsc\AvesAmeaçadas.webp" class="d-block w-100" alt="Aves">
+                <div class="carousel-caption d-none d-md-block">
+                    <p>Aves comem plástico no oceano porque sentem cheiro de alimento.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="EcoTrack\imgConsc\MicroplasticoSangue.jpg" class="d-block w-100" alt="Microplástico">
+                <div class="carousel-caption d-none d-md-block">
+                    <p>Microplásticos encontrados na corrente sanguínea humana.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="EcoTrack\imgConsc\PlasticoNoMar.jpg" class="d-block w-100" alt="Plásitco no mar">
+                <div class="carousel-caption d-none d-md-block">
+                    <p>Oceano poluído com diversos tipos de lixo.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Próximo</span>
+        </button>
+    </div>    
+     <section class="paragrafo2">
+        <div class="p2">
+           <p>
+            É importante que todos os seres humanos trabalhem juntos para diminuir as ameaças à vida marinha e proteger o nosso planeta. 
+            Entre as principais ameaças à vida marinha dos nossos oceanos podemos citar por exemplo a poluição, a destruição de habitats, o aumento da temperatura dos oceanos devido ao aquecimento global, a sobrepesca, a introdução de espécies invasoras e a acidificação dos oceanos. 
+            Estas atividades exploratórias ilegais ou não sustentáveis coloca em risco algo em torno de mais de 236 mil espécies de animais diferentes, incluindo animais, plantas, fungos, algas, bactérias, protozoários e outros seres microscópicos. Isso é alarmante e merece toda a nossa atenção!
+           <br><br>
+            E como fazer isso? Através da adoção de algumas práticas sustentáveis. Isso é importante porque, agir de acordo com a sustentabilidade tornam as ações capazes de preservarem a vida de milhares de espécies de animais e poupam recursos naturais para as próximas gerações.
+            Um dos primeiros passos nessa direção é a adoção de práticas sustentáveis, que são fundamentais para reduzir os impactos negativos das atividades humanas nos ecossistemas aquáticos. Ações sustentáveis ajudam a preservar a vida de milhares de espécies marinhas e a poupar recursos naturais essenciais para as futuras gerações.
+            </p>
+        </div>
+     </section>
+
+    <section class="makes">
+        <h2>Nossa Tarefa</h2>
+        <div class="makes-container">
+           <div class="col" data-aos="fade-up">
+              <div class="card">
+                 <img src="EcoTrack\imgConsc\ComecaPorVoce.webp" class="card-img-top" alt="Recolhendo sacola">
+                 <div class="card-body">
+                    <h5 class="card-title">Não deixar lixos nas praias</h5>
+                    <p class="card-text">A poluição nas praias prejudicam tanto o meio ambiente como também a população.</p>
+                 </div>
+              </div>
+           </div>
+           <div class="col" data-aos="fade-up">
+              <div class="card">
+                 <img src="EcoTrack\imgConsc\divisaPlasticoAgua.jpg" class="card-img-top" alt="Mar cheio de lixo">
+                 <div class="card-body">
+                    <h5 class="card-title">Evitar produtos plásticos </h5>
+                    <p class="card-text">A poluição plástica nos oceanos representa uma grande ameaça a vida marítma.</p>
+                 </div>
+              </div>
+           </div>
+           <div class="col" data-aos="fade-up">
+              <div class="card">
+                 <img src="EcoTrack\imgConsc\InstruindoCons.jpg" class="card-img-top" alt="Drone monitorador">
+                 <div class="card-body">
+                    <h5 class="card-title">Instruir uma nova geração</h5>
+                    <p class="card-text">Preparar uma geração para um relacioanamento mais saudável com o planeta para colher os frutos no futuro.</p>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </section>
+
+     <section class="paragrafo3">
+        <div class="p3">
+            <p>
+               A educação ambiental é uma ferramenta poderosa que desperta um senso de responsabilidade coletiva, motivando ações individuais e comunitárias que podem contribuir para a proteção dos oceanos. Proteger a vida marinha e combater a poluição marítima são passos essenciais para garantir a saúde dos ecossistemas aquáticos e a preservação dos recursos naturais para as futuras gerações.
+                <br><br>
+                Nossa empresa possui equipes focadas na conscientização da população, operando iniciativas através do mundo inteiro buscando mostrar para as pessoas como os impactos de práticas não sustentáveis são devastadores para o ecossistema marinho e suas próprias vidas. Fazendo oque fazemos, contruimos um mundo melhorar, mas esse mundo só será alcançado mesmo a partir de você.
+            </p>
+        </div>
+     </section>
+
+    
+
+    <div class="map-info">
+        <h2>Use o mapa abaixo para explorar diferentes regiões e ver dados sobre o nível de poluição plástica, ações de conscientização e saúde da vida marinha.</h2>
+    </div>
+
+    <div id="map"></div>
+
+
+<div class="map-info">
+    <button id="filter-button" class="filter-button">Mostrar Filtros</button>
+    <div id="filters" style="display: none;">
+        <label><input type="radio" name="filter" value="plastic" checked> Nível de Poluição Plástica</label>
+        <label><input type="radio" name="filter" value="conservation"> Ações de Conscientização</label>
+        <label><input type="radio" name="filter" value="marine-health"> Saúde da Vida Marinha</label>
+    </div>
+</div>
+    
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+
+       <footer class="footer">
+            <div class="container">
+                
+                <p>Desenvolvido por Ecotrack</p>
+            </div>
+       </footer>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+<script src="animação.js"></script> 
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+    </body>
+</html>
